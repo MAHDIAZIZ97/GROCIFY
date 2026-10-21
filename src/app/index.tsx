@@ -1,12 +1,15 @@
 import { Link } from "expo-router";
 import { Text, View, StyleSheet } from "react-native";
+import { Image } from "expo-image";
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.body}>Grocify</Text>
-      <Link href={`./about`} style={newStyles.link} >About Screen</Link>
-      <Link href={"./contact"} style={newStyles.link}>Contact</Link>
+    <View className="bg-red-100 flex justify-center items-center h-full">
+      <Text className="text-blue-400 text-3xl font-extrabold uppercase bg-red-100">Grocify </Text>
+      <Link href={`./about`} style={newStyles.link}>
+        About Page
+      </Link>
+      <Image source={require("../../assets/images/icon.png")} style={{width: 100, height: 100, borderRadius: 50}} />
     </View>
   );
 }
@@ -16,20 +19,19 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "gray",
+    backgroundColor: "white",
   },
   body: {
-    color: "yellow",
+    color: "red",
     fontSize: 40,
-    fontWeight: 500
-  }
+    fontWeight: 500,
+  },
 });
 
 const newStyles = StyleSheet.create({
   link: {
-      color: "white",
-      fontSize: 30,
-      marginTop: 10,
-      
-  }
-})
+    color: "white",
+    fontSize: 30,
+    marginTop: 10,
+  },
+});
